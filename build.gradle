@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'org.robovm'
+version = '2.5.0-2-SNAPSHOT'
+
+description = """Soot"""
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}
+
+
+sourceSets {
+
+    main {
+        java {
+            srcDirs = ['src', 'generated/options']
+            exclude('**/AntTask.java')
+        }
+    }
+
+}
